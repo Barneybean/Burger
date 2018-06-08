@@ -1,0 +1,47 @@
+<br><br>
+<h1>Ramen!</h1>
+
+<h2>Ramen Ordered</h2>
+<ul>
+  {{#each ramens}}
+  {{!-- unless -equivalent to- if !== to sleepy --}}
+  {{!-- ***** --}}
+  {{!-- use {{>...}} so <li>this.name</li> will be listed in partials handlebars --}}
+  {{!-- ***** --}}
+  {{!-- come in as false then all true is printed and newmade set to true --}}
+    {{#unless made}} 
+    {{!-- set made to true and send to the button in made so when that button is clicked, it goes to made session --}}
+      {{> ramens/made made=true}}
+    {{/unless}}
+    
+  {{/each}}
+</ul>
+
+<h2>Ramen that are made and ready to serve: </h2>
+
+<ul>
+  {{#each ramens}}
+    {{#if made}}  {{!-- print out all made ramen because made is tru here --}}
+    {{!-- > means go to partials find cats folder, go to cat-block.handlebars then send var "sleep" with a value to that page. --}}
+      {{> ramens/made made=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Order a Ramen</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="Ra">Ramen Name:</label>
+    <input type="text" id="Ra" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="made">Ramen Made?</label><br>
+    <input type="radio" name="made" value="0"checked> Make A New Ramen
+    <input type="radio" name="made" value="1"> Already Made, Forgot To Add To Database!<br>
+  </div>
+
+  <button type="submit">Add Ramen</button>
+</form>
+
