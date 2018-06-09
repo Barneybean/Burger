@@ -1,6 +1,6 @@
 # Ramen 
 
-`Deployed Site: https://reamenordercg.herokuapp.com/`
+* Deployed Site: https://reamenordercg.herokuapp.com/
 
 * This is a ramen ordering web app that allows users to create new ramen orders and visually dislay them on in different secction of the page. server and cook can then update ramen status or cancel orders by clicking on the first button or delete button following the ramen name.
 
